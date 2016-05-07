@@ -1,5 +1,13 @@
 grammar Fjava;
 
+compilationUnit
+    :   typeDeclaration* EOF
+    ;
+
+typeDeclaration
+    :   classDeclaration
+    |   ';'
+    ;
 
 classDeclaration
     :   'class' Identifier typeParameters?
