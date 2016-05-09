@@ -1,0 +1,28 @@
+class List extends Object {
+    List() { super(); }
+    List append(List l) {
+      return this; // dummy
+    }
+}
+
+class Nil extends List {
+    Nil() { super (); }
+
+    List append(List l) {
+      return l;
+    }
+}
+
+class Elem extends List {
+    Object a; List next;
+    
+    Elem(Object a, List next) {
+      super();
+      this.a = a;
+      this.next = next;
+    }
+    
+    List append(List l) {
+      return new Elem(this.a, this.next.append(l));
+    }
+}
