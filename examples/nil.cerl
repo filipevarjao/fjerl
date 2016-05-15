@@ -1,0 +1,13 @@
+-class(nil).
+-extends(list).
+-export([append/0]).
+-constructor([constructor/0]).
+
+methods.
+
+constructor() -> ok.
+
+class_methods.
+
+append() ->
+    L = list::constructor().

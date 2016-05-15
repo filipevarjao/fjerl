@@ -1,4 +1,4 @@
-*.class
+**.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -7,6 +7,22 @@
 *.jar
 *.war
 *.ear
+**.beam
+
+# Maven build folders
+target/
+
+# Ant build folders
+build/
+dist/
+lib/
+user.build.properties
+
+# Eclipse projects
+.classpath
+.project
+.settings/
+.metadata
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
