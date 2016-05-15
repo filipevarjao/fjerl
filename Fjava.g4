@@ -95,6 +95,7 @@ block
 
 blockStatement
     :   statement
+    |   typeDeclaration
     ;
 
 statement
