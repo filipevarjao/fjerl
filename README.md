@@ -7,9 +7,10 @@ Fjerl is a compiler (maybe just a translator) from Featherweight Java approach t
 ### Requirements
 * Antlr 4 and ooErlang
 
-Example in Featherweight Java 
--------------
-```fjava
+Example
+-------
+###Featherweight Java 
+```java
 class List extends Object {
     List() { super(); }
     List append(List l) {
@@ -17,30 +18,28 @@ class List extends Object {
     }
 }
 ```
-Compiled to ooErlang
--------------
-```ooerlang
+###Compiled to ooErlang
+```erlang
 -class(list).
--export([append/0]).
--constructor([constructor/0]).
+-export([append/1]).
+-constructor([new/0]).
 
 methods.
 
-constructor() -> ok.
+new() -> ok.
 
-append() ->
-    L = list::constructor(),
+append(L) ->
+    L = list::new(),
     L.
 ```
-Generate Erlang native code.
--------------
+###Generate Erlang native code.
+
 ```erlang
 -module(list).
 
--export([append/1, constructor/0]).
+-export([append/2, new/0]).
 
-append(ObjectID) -> L = list:constructor(), L.
+append(ObjectID, L) -> L = list:new(), L.
 
-constructor() ->
-    ObjectID = ooe:new([]), ok, {list, ObjectID}.
+new() -> ObjectID = ooe:new([]), ok, {list, ObjectID}.
 ```
