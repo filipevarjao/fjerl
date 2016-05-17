@@ -22,24 +22,23 @@ class List extends Object {
 ```erlang
 -class(list).
 -export([append/1]).
--constructor([new/0]).
+-constructor([new/1]).
 
 methods.
 
 new() -> ok.
 
 append(L) ->
-    L = list::new(),
-    L.
+    self::new().
 ```
 ###Generate Erlang native code.
 
 ```erlang
 -module(list).
 
--export([append/2, new/0]).
+-export([append/2, new/1]).
 
-append(ObjectID, L) -> L = list:new(), L.
+append(ObjectID, L) -> new(ObjectID).
 
-new() -> ObjectID = ooe:new([]), ok, {list, ObjectID}.
+new(ObjectID) ->  ok.
 ```
