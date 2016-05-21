@@ -2,7 +2,7 @@
 Fjerl
 =====
 
-Fjerl is a compiler (maybe just a translator) from Featherweight Java approach to ooErlang and consequently Erlang. This project show the idea of relationship between Object-Orientation and Message Passing, strengthening the first thought of OO created by Dr. Alan Kay, mapping Java objects directly to Erlang process.
+Fjerl is a translator (compiler, code generator) from Featherweight Java approach to ooErlang and consequently Erlang. This project show the idea of relationship between Object-Orientation and Message Passing, strengthening the first thought of OO created by Dr. Alan Kay, mapping Java objects directly to Erlang process.
 
 ### Requirements
 * Antlr 4 and ooErlang
